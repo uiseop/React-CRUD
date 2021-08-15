@@ -6,16 +6,22 @@ class Order extends Component{
         let CountList = []
         let totalPay = 0
         for(let c of pCountList){
-            CountList.push(<div key={c.id}>
+            CountList.push(<div key={c.id} className="cList">
                 {c.name} : {c.cnt}개
-                <button>추가</button>
-                <button>빼기</button>
+                <a href="/" className="btn" name={c.id} onClick={function(e){
+                    e.preventDefault()
+                    this.props.onChangePage('add',e.target.name)
+                }.bind(this)}>추가</a>
+                <a href="/" className="btn" name={c.id} onClick={function(e){
+                    e.preventDefault()
+                    this.props.onChangePage('minus',e.target.name)
+                }.bind(this)}>빼기</a>
             </div>)
             totalPay += c.price * c.cnt
         }
         return(
             <div className="OrderList">
-                {CountList}
+                {CountList}<br></br>
                 <hr></hr>
                 <p>총 : {totalPay}원</p>
             </div>

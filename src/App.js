@@ -46,7 +46,33 @@ class App extends Component {
           pizzaCount:result
         })
       }.bind(this)}></Navigation>
-      <Order pizzaCount={this.state.pizzaCount}></Order>
+      <Order pizzaCount={this.state.pizzaCount}
+      onChangePage={function(_func, _id){
+        // console.log(_func,_id);
+        let result = Array.from(this.state.pizzaCount)
+        if(_func === 'add'){
+          for(let idx in result){
+            if(result[idx].id === Number(_id)){
+              result[idx].cnt += 1
+              break
+            }
+          }
+        }
+        else if(_func === 'minus'){
+          for(let idx in result){
+            if(result[idx].id === Number(_id)){
+              if(result[idx].cnt == 0){
+                alert('최소주문은 0개 이상입니다')
+                break
+              }
+              result[idx].cnt -= 1
+            }
+          }
+        }
+        this.setState({
+          pizzaCount:result
+        })
+      }.bind(this)}></Order>
     </div>
   );
 }
