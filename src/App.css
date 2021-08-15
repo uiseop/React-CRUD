@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 .App{
+  position: relative;
   margin-top: 15px;
 }
 
@@ -33,4 +34,11 @@ p{
   text-align: center;
   font-family: 'Jua', sans-serif;
   font-size: 30px;
+}
+
+.OrderList{
+  position: absolute;
+  top:110px;
+  right: 230px;
+  font-family: 'Jua', sans-serif;
 }

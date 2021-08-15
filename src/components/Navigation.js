@@ -5,7 +5,12 @@ class Navigation extends Component{
         let pizzaList = this.props.pizzaList
         let list = []
         for(let i of pizzaList){
-            list.push(<div key={i.id} className="pizzas">
+            list.push(<div key={i.id} id={i.id} className="pizzas"
+            onClick={function(e){
+                e.preventDefault()
+                this.props.onChangePage(e.currentTarget.id)
+                // console.log(e.currentTarget.id);
+            }.bind(this)}>
                 <img className="img" src={i.img}></img>
                 <div className="words">
                     <p>{i.name}</p>
