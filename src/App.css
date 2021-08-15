@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+.App{
+  margin-top: 15px;
+}
+
+.pList{
+  border: solid 3px black;
+}
+
+.img{
+  margin-top: 3px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.pizzas{
+  width: 330px;
+  text-align: center;
+  margin: 2px auto;
+  border: solid 3px rgba(247, 234, 121, 0.973);
+  border-radius: 10px;
+  font-family: 'Jua', sans-serif;
+}
+
+p{
+  height: 8px;
+}
+
+
+.title{
+  text-align: center;
+  font-family: 'Jua', sans-serif;
+  font-size: 30px;
+}
